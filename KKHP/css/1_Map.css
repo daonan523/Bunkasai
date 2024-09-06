@@ -1,5 +1,432 @@
-div {
-  height:90%;
-  width:80%;
+.Map {
+  position: absolute;
+  top: 1%;
+  left: 1%;
+  width: 70%;
+  aspect-ratio:3/2;
   background:#ffffff;
+  }
+.Map .Block {
+  text-align: center;
+  align-items: center;
+  display: flex; 
+  position: absolute;
+  transition: 0.3s ease-in-out;
+  text-decoration: none;
+  color:#000000;
+  background:#c0c0c0;
+
+  width: 0%;
+  height: 0%;
+}
+.Map .Block span {
+  flex: 1;
+  font-size: .75vw;
+}
+.Map .VW12 span {
+  font-size: 1.2vw;
+}
+.Map .Block:hover {
+  color:#ffffff;
+  background:#000000;
+}
+.Map #SW {
+  top: 0%;
+  left: 0%;
+  width: 10%;
+  height: 10%;
+}
+.Map #SW span {
+  font-size: 2vw;
+}
+.Map .VV {
+  visibility: visible;
+  pointer-events: auto;
+  animation: fadein 0.3s 0s ease-in forwards
+}
+.Map .HD {
+  visibility: hidden;
+  pointer-events: none;
+  animation: fadeout 0.3s 0s ease-in forwards
+}
+@keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }}
+  @keyframes fadeout {
+  0% {
+    opacity: 1;
+  }
+  25% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }}
+.Map #B0 {
+  top: 84%;
+  left: 47%;
+  width: 6%;
+  height: 16%;
+}
+.Map #B1 {
+  top: 47%;
+  left: 32%;
+  width: 5%;
+  height: 8%;
+}
+.Map #B2 {
+  top: 39%;
+  left: 32%;
+  width: 5%;
+  height: 8%;
+}
+.Map #B3 {
+  top: 31%;
+  left: 32%;
+  width: 5%;
+  height: 8%;
+}
+.Map #B4 {
+  top: 55%;
+  left: 32%;
+  width: 5%;
+  height: 8%;
+}
+.Map #B5 {
+  top: 47%;
+  left: 32%;
+  width: 5%;
+  height: 8%;
+}
+.Map #B6 {
+  top: 39%;
+  left: 32%;
+  width: 5%;
+  height: 8%;
+}
+.Map #B7 {
+  top: 31%;
+  left: 32%;
+  width: 5%;
+  height: 8%;
+}
+.Map #B8 {
+  top: 47%;
+  left: 40%;
+  width: 5%;
+  height: 8%;
+}
+.Map #B9 {
+  top: 39%;
+  left: 40%;
+  width: 5%;
+  height: 8%;
+}
+.Map #B10 {
+  top: 31%;
+  left: 40%;
+  width: 5%;
+  height: 8%;
+}
+.Map #B11 {
+  top: 55%;
+  left: 40%;
+  width: 5%;
+  height: 8%;
+}
+.Map #B12 {
+  top: 47%;
+  left: 40%;
+  width: 5%;
+  height: 8%;
+}
+.Map #B13 {
+  top: 39%;
+  left: 40%;
+  width: 5%;
+  height: 8%;
+}
+.Map #B14 {
+  top: 31%;
+  left: 40%;
+  width: 5%;
+  height: 8%;
+}
+.Map #B15 {
+  top: 47%;
+  left: 48%;
+  width: 5%;
+  height: 8%;
+}
+.Map #B16 {
+  top: 39%;
+  left: 48%;
+  width: 5%;
+  height: 8%;
+}
+.Map #B17 {
+  top: 31%;
+  left: 48%;
+  width: 5%;
+  height: 8%;
+}
+.Map #B18 {
+  top: 55%;
+  left: 48%;
+  width: 5%;
+  height: 8%;
+}
+.Map #B19 {
+  top: 47%;
+  left: 48%;
+  width: 5%;
+  height: 8%;
+}
+.Map #B20 {
+  top: 39%;
+  left: 48%;
+  width: 5%;
+  height: 8%;
+}
+.Map #B21 {
+  top: 31%;
+  left: 48%;
+  width: 5%;
+  height: 8%;
+}
+.Map #B22 {
+  top: 47%;
+  left: 74%;
+  width: 10%;
+  height: 21%;
+}
+.Map #B23 {
+  top: 0%;
+  left: 71%;
+  width: 13%;
+  height: 32%;
+}
+.Map #B24 {
+  top: 68%;
+  left: 0%;
+  width: 16%;
+  height: 32%;
+}
+.Map #B25 {
+  top: 68%;
+  left: 35%;
+  width: 10%;
+  height: 16%;
+}
+.Map #B26 {
+  top: 92%;
+  left: 19%;
+  width: 5%;
+  height: 8%;
+}
+.Map #B27 {
+  top: 68%;
+  left: 19%;
+  width: 5%;
+  height: 8%;
+}
+.Map #B28 {
+  top: 92%;
+  left: 27%;
+  width: 5%;
+  height: 8%;
+}
+.Map #B29 {
+  top: 68%;
+  left: 27%;
+  width: 5%;
+  height: 8%;
+}
+.Map #B30 {
+  top: 92%;
+  left: 27%;
+  width: 5%;
+  height: 8%;
+}
+.Map #B31 {
+  top: 68%;
+  left: 27%;
+  width: 5%;
+  height: 8%;
+}
+.Map #B32 {
+  top: 92%;
+  left: 19%;
+  width: 5%;
+  height: 8%;
+}
+.Map #B33 {
+  top: 68%;
+  left: 19%;
+  width: 5%;
+  height: 8%;
+}
+.Map #B34 {
+  top: 42%;
+  left: 13%;
+  width: 7%;
+  height: 21%;
+}
+.Map #B35 {
+  top: 42%;
+  left: 13%;
+  width: 7%;
+  height: 21%;
+}
+.Map #B36 {
+  top: 42%;
+  left: 23%;
+  width: 6%;
+  height: 11%;
+}
+.Map #B37 {
+  top: 52%;
+  left: 23%;
+  width: 6%;
+  height: 11%;
+}
+.Map #B38 {
+  top: 84%;
+  left: 40%;
+  width: 5%;
+  height: 8%;
+}
+.Map #B39 {
+  top: 0%;
+  left: 90%;
+  width: 10%;
+  height: 16%;
+}
+.Map #B40 {
+  top: 84%;
+  left: 19%;
+  width: 5%;
+  height: 8%;
+}
+.Map #B41 {
+  top: 76%;
+  left: 19%;
+  width: 5%;
+  height: 8%;
+}
+.Map #B42 {
+  top: 84%;
+  left: 27%;
+  width: 5%;
+  height: 8%;
+}
+.Map #B43 {
+  top: 76%;
+  left: 27%;
+  width: 5%;
+  height: 8%;
+}
+.Map #B44 {
+  top: 84%;
+  left: 27%;
+  width: 5%;
+  height: 8%;
+}
+.Map #B45 {
+  top: 76%;
+  left: 27%;
+  width: 5%;
+  height: 8%;
+}
+.Map #B46 {
+  top: 84%;
+  left: 19%;
+  width: 5%;
+  height: 8%;
+}
+.Map #B47 {
+  top: 76%;
+  left: 19%;
+  width: 5%;
+  height: 8%;
+}
+.Map #B48 {
+  top: 92%;
+  left: 40%;
+  width: 5%;
+  height: 8%;
+}
+.Map #B49 {
+  top: 55%;
+  left: 32%;
+  width: 5%;
+  height: 8%;
+}
+.Map #B50 {
+  top: 55%;
+  left: 40%;
+  width: 5%;
+  height: 8%;
+}
+.Map #B51 {
+  top: 55%;
+  left: 48%;
+  width: 5%;
+  height: 8%;
+}
+.Map #CO1 {
+  top: 63%;
+  left: 13%;
+  width: 52%;
+  height: 5%;
+  background:#000000;
+}
+.Map #CO2 {
+  top: 63%;
+  left: 6%;
+  width: 68%;
+  height: 5%;
+  background:#000000;
+}
+.Map #CO3 {
+  top: 32%;
+  left: 71%;
+  width: 3%;
+  height: 31%;
+  background:#000000;
+}
+.Map #NE1 {
+  top: 39%;
+  left: 60%;
+  width: 5%;
+  height: 24%;
+  background:#808080;
+}
+.Map #NE2 {
+  top: 68%;
+  left: 60%;
+  width: 5%;
+  height: 32%;
+  background:#808080;
+}
+.Map #NE3 {
+  top: 39%;
+  left: 60%;
+  width: 5%;
+  height: 24%;
+  background:#808080;
+}
+.Map #NE4 {
+  top: 68%;
+  left: 60%;
+  width: 5%;
+  height: 32%;
+  background:#808080;
 }
