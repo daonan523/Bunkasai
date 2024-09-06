@@ -4,22 +4,25 @@
   left: 1%;
   width: 70%;
   aspect-ratio:3/2;
-  background:#ffffff;
+  background:#202020;
   line-height: 1.2;
   }
-.Map .Block {
+.Map div {
+  transition: 0.3s ease-in-out;
+  text-decoration: none;
   text-align: center;
   align-items: center;
   display: flex; 
   position: absolute;
-  transition: 0.3s ease-in-out;
-  text-decoration: none;
-  color:#000000;
+  background:#808080;
+}
+.Map .Block {
+  outline: 0.1vw solid #404040;
+  outline-offset: -0.09vw;
+}
+.Map .Exist {
   background:#c0c0c0;
-  outline: 0.1vw solid #000000;
-
-  width: 0%;
-  height: 0%;
+  color:#000000;
 }
 .Map .Block span {
   flex: 1;
@@ -28,7 +31,7 @@
 .Map .VW12 span {
   font-size: 1.2vw;
 }
-.Map .Block:hover {
+.Map .Exist:hover {
   color:#ffffff;
   background:#000000;
 }
@@ -388,21 +391,21 @@
   left: 13%;
   width: 52%;
   height: 5%;
-  background:#000000;
+  background:#404040;
 }
 .Map #CO2 {
   top: 63%;
   left: 6%;
   width: 68%;
   height: 5%;
-  background:#000000;
+  background:#404040;
 }
 .Map #CO3 {
   top: 32%;
   left: 71%;
   width: 3%;
   height: 31%;
-  background:#000000;
+  background:#404040;
 }
 .Map #NE1 {
   top: 39%;
