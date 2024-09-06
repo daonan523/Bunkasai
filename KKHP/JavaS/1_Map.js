@@ -57,7 +57,9 @@ function FSW() {
       MapList = json.MapList;
       for ( i=1 ; i < MapList.length ; i++ ) {
         for ( j=0 ; j < MapList[i][1].length ; j++ ) {
-            if ( BlockP[MapList[i][1][j]] != "<span>" ) {
+            if ( BlockP[MapList[i][1][j]] == "<span>" ) {
+                Blocks[MapList[i][1][j]].classList.add("Exist")
+            } else {
                 BlockP[MapList[i][1][j]] += "<br>"
             }
             BlockP[MapList[i][1][j]] += String( MapList[i][0] )
