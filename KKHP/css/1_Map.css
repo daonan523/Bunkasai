@@ -5,6 +5,7 @@
   width: 70%;
   aspect-ratio:3/2;
   background:#ffffff;
+  line-height: 1;
   }
 .Map .Block {
   text-align: center;
