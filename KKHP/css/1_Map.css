@@ -16,6 +16,8 @@
   text-decoration: none;
   color:#000000;
   background:#c0c0c0;
+  outline: 0.1vw solid #000000;
+  outline-offset: -0.1vw;
 
   width: 0%;
   height: 0%;
