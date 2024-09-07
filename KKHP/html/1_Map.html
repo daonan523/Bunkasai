@@ -1,78 +1,114 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>第76回 宇高祭 非公式ホームページ</title>
-  <link rel="icon" href="../img/favicon.png">
-  <link rel="stylesheet" type="text/css" href="../css/common.css">
-  <link rel="stylesheet" type="text/css" href="../css/1_Map.css">
-</head>
-
-<body>
-  <div class="Map">
-    <div href="#" class="Block Exist" id="SW" onclick="FSW()"><span>1F</span></div>
-    <div href="#" class="Block VV" id="B0"><span></span></div>
-    <div href="#" class="Block VV VW12" id="B1"><span></span></div>
-    <div href="#" class="Block VV VW12" id="B2"><span></span></div>
-    <div href="#" class="Block VV VW12" id="B3"><span></span></div>
-    <div href="#" class="Block HD VW12" id="B4"><span></span></div>
-    <div href="#" class="Block HD VW12" id="B5"><span></span></div>
-    <div href="#" class="Block HD VW12" id="B6"><span></span></div>
-    <div href="#" class="Block HD VW12" id="B7"><span></span></div>
-    <div href="#" class="Block VV VW12" id="B8"><span></span></div>
-    <div href="#" class="Block VV VW12" id="B9"><span></span></div>
-    <div href="#" class="Block VV VW12" id="B10"><span></span></div>
-    <div href="#" class="Block HD VW12" id="B11"><span></span></div>
-    <div href="#" class="Block HD VW12" id="B12"><span></span></div>
-    <div href="#" class="Block HD VW12" id="B13"><span></span></div>
-    <div href="#" class="Block HD VW12" id="B14"><span></span></div>
-    <div href="#" class="Block VV VW12" id="B15"><span></span></div>
-    <div href="#" class="Block VV VW12" id="B16"><span></span></div>
-    <div href="#" class="Block VV VW12" id="B17"><span></span></div>
-    <div href="#" class="Block HD VW12" id="B18"><span></span></div>
-    <div href="#" class="Block HD VW12" id="B19"><span></span></div>
-    <div href="#" class="Block HD VW12" id="B20"><span></span></div>
-    <div href="#" class="Block HD VW12" id="B21"><span></span></div>
-    <div href="#" class="Block VV VW12" id="B22"><span></span></div>
-    <div href="#" class="Block VV VW12" id="B23"><span></span></div>
-    <div href="#" class="Block VV VW12" id="B24"><span></span></div>
-    <div href="#" class="Block VV VW12" id="B25"><span></span></div>
-    <div href="#" class="Block VV" id="B26"><span></span></div>
-    <div href="#" class="Block VV" id="B27"><span></span></div>
-    <div href="#" class="Block VV" id="B28"><span></span></div>
-    <div href="#" class="Block VV" id="B29"><span></span></div>
-    <div href="#" class="Block HD" id="B30"><span></span></div>
-    <div href="#" class="Block HD" id="B31"><span></span></div>
-    <div href="#" class="Block HD" id="B32"><span></span></div>
-    <div href="#" class="Block HD" id="B33"><span></span></div>
-    <div href="#" class="Block HD" id="B34"><span></span></div>
-    <div href="#" class="Block VV" id="B35"><span></span></div>
-    <div href="#" class="Block VV" id="B36"><span></span></div>
-    <div href="#" class="Block VV" id="B37"><span></span></div>
-    <div href="#" class="Block VV" id="B38"><span></span></div>
-    <div href="#" class="Block VV VW12" id="B39"><span></span></div>
-    <div href="#" class="Block VV" id="B40"><span></span></div>
-    <div href="#" class="Block VV" id="B41"><span></span></div>
-    <div href="#" class="Block VV" id="B42"><span></span></div>
-    <div href="#" class="Block VV" id="B43"><span></span></div>
-    <div href="#" class="Block HD" id="B44"><span></span></div>
-    <div href="#" class="Block HD" id="B45"><span></span></div>
-    <div href="#" class="Block HD" id="B46"><span></span></div>
-    <div href="#" class="Block HD" id="B47"><span></span></div>
-    <div href="#" class="Block VV" id="B48"><span></span></div>
-    <div href="#" class="Block VV" id="B49"><span></span></div>
-    <div href="#" class="Block VV" id="B50"><span></span></div>
-    <div href="#" class="Block VV" id="B51"><span></span></div>
-    <div href="#" class="HD" id="CO1"><span></span></div>
-    <div href="#" class="VV" id="CO2"><span></span></div>
-    <div href="#" class="VV" id="CO3"><span></span></div>
-    <div href="#" class="VV" id="NE1"><span></span></div>
-    <div href="#" class="VV" id="NE2"><span></span></div>
-    <div href="#" class="HD" id="NE3"><span></span></div>
-    <div href="#" class="HD" id="NE4"><span></span></div>
-  </div>
-  <script src="../JavaS/database.json"></script>
-  <script src="../JavaS/1_Map.js"></script>
-</body>
+var Switch = document.getElementById("SW") ;
+var Floor = 0 ;
+var Blocks = [];
+var BlockP = [];
+var MapList = [];
+var PlaceIn = [];
+var PlaceP = "";
+var InfoPlace = "";
+var NowNum = -1;
+for ( i=0 ; i < 52 ; i++ ) {
+    PlaceIn.push([])
+    Blocks.push(document.getElementById("B"+String( i )))
+    BlockP.push("<span>")
+};
+var Corridor = [];
+for ( i=0 ; i < 3 ; i++ ) {
+    Corridor.push(document.getElementById("CO"+String( i+1 )))
+};
+var DNotE = [];
+for ( i=0 ; i < 4 ; i++ ) {
+    DNotE.push(document.getElementById("NE"+String( i+1 )))
+};
+function FSW() {
+    Floor = ( Floor+1 )%2
+    Switch.innerHTML = "<span>"+String( Floor+1 )+"F</span>"
+    for ( i=0 ; i < Blocks.length ; i++ ) {
+        if (Blocks[i].classList.contains("VV")) {
+            Blocks[i].classList.remove("VV")
+            Blocks[i].classList.add("HD")
+        } else if (Blocks[i].classList.contains("HD")) {
+            Blocks[i].classList.remove("HD")
+            Blocks[i].classList.add("VV")
+        }
+    }
+    for ( i=0 ; i < Corridor.length ; i++ ) {
+        if (Corridor[i].classList.contains("VV")) {
+            Corridor[i].classList.remove("VV")
+            Corridor[i].classList.add("HD")
+        } else if (Corridor[i].classList.contains("HD")) {
+            Corridor[i].classList.remove("HD")
+            Corridor[i].classList.add("VV")
+        }
+    }
+    for ( i=0 ; i < DNotE.length ; i++ ) {
+        if (DNotE[i].classList.contains("VV")) {
+            DNotE[i].classList.remove("VV")
+            DNotE[i].classList.add("HD")
+        } else if (DNotE[i].classList.contains("HD")) {
+            DNotE[i].classList.remove("HD")
+            DNotE[i].classList.add("VV")
+        }
+    }
+}
+function Clicked(Num) {
+    NowNum = Num
+    document.getElementById("Place").innerHTML = "<span>"+Place[Num]+"</span>"
+    PlaceP = ""
+    for ( i=0 ; i < PlaceIn[Num].length ; i++ ) {
+        PlaceP += '<div class="Links" onclick="InfoOp('+ String( PlaceIn[Num][i] ) +')"><span>'+MapList[PlaceIn[Num][i]][0]+'</span></div>'
+    }
+    document.getElementById("Link").innerHTML = '<div id="Place"><span>'+Place[Num]+'</span></div>'+PlaceP
+}
+function InfoOp(Num) {
+    if ( Num == 0 ) {
+        location.href = "../html/3_TTab.html"
+    } else {
+        document.getElementById("Info").classList.remove("HD")
+        document.getElementById("InfoBG").classList.remove("HD05")
+        document.getElementById("Info").classList.add("VV")
+        document.getElementById("InfoBG").classList.add("VV05")
+        document.getElementById("InfoGr").innerText = String( MapList[Num][0] );
+        InfoPlace = "";
+        for ( i=0 ; i<MapList[Num][1].length ; i++ ) {
+            InfoPlace += Place[MapList[Num][1][i]] + " "
+        }
+        document.getElementById("InfoPl").innerText = String( InfoPlace );
+        document.getElementById("InfoTi").innerText = String( MapList[Num][2] );
+        document.getElementById("InfoEx").innerHTML = String( MapList[Num][3] );
+    }
+}
+function InfoCl(){
+    document.getElementById("Info").classList.remove("VV")
+    document.getElementById("InfoBG").classList.remove("VV05")
+    document.getElementById("Info").classList.add("HD")
+    document.getElementById("InfoBG").classList.add("HD05")
+}
+(async function getData() {
+    try {
+        const url = "../JavaS/database.json";
+        const response = await fetch(url);
+        const json = await response.json();
+        MapList = json.MapList;
+        Place = json.Place;
+      for ( i=0 ; i < MapList.length ; i++ ) {
+        for ( j=0 ; j < MapList[i][1].length ; j++ ) {
+            if ( i != 0 ) {
+                if ( BlockP[MapList[i][1][j]] == "<span>" ) {
+                    Blocks[MapList[i][1][j]].classList.add("Exist")
+                } else {
+                    BlockP[MapList[i][1][j]] += "<br>"
+                }
+                BlockP[MapList[i][1][j]] += String( MapList[i][0] )
+            }
+            PlaceIn[MapList[i][1][j]].push( i )
+        }
+      }
+      for ( i=0 ; i < Blocks.length ; i++ ) {
+        console.log(BlockP[i])
+        Blocks[i].innerHTML = BlockP[i] + "</span>"
+      }
+    } catch (error) {
+      console.error(error.message);
+    }
+  })();
